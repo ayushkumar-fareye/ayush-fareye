@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: demo
+  name: hello-ayush
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: demo
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: demo
+    spec:
+      containers:
+      - image: ayushfareye/hello-web:latest2
+        name: kubernetes
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
+
