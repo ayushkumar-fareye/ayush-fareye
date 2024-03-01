@@ -1,1 +1,32 @@
-
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  annotations:
+    hostPathProvisionerIdentity: 2bb0c10f-ed35-4771-acb0-79b0475f0429
+    pv.kubernetes.io/provisioned-by: k8s.io/minikube-hostpath
+  creationTimestamp: "2024-03-01T10:54:05Z"
+  finalizers:
+  - kubernetes.io/pv-protection
+  name: pvc-cd016709-333a-40b5-b16a-e7058609e590
+  resourceVersion: "95960"
+  uid: 6e770101-01aa-4ee0-83a8-e3ac393cf375
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 8Gi
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: data-my-mysql-0
+    namespace: default
+    resourceVersion: "95952"
+    uid: cd016709-333a-40b5-b16a-e7058609e590
+  hostPath:
+    path: /tmp/hostpath-provisioner/default/data-my-mysql-0
+    type: ""
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: standard
+  volumeMode: Filesystem
+status:
+  phase: Bound
